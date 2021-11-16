@@ -1,0 +1,151 @@
+# coding: utf-8
+"""
+Base para desarrollo de modulos externos.
+Para obtener el modulo/Funcion que se esta llamando:
+     GetParams("module")
+
+Para obtener las variables enviadas desde formulario/comando Rocketbot:
+    var = GetParams(variable)
+    Las "variable" se define en forms del archivo package.json
+
+Para modificar la variable de Rocketbot:
+    SetVar(Variable_Rocketbot, "dato")
+
+Para obtener una variable de Rocketbot:
+    var = GetVar(Variable_Rocketbot)
+
+Para obtener la Opcion seleccionada:
+    opcion = GetParams("option")
+
+
+Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
+    
+    pip install <package> -t .
+
+"""
+
+import os
+import sys
+
+base_path = tmp_global_obj["basepath"]
+cur_path = base_path + 'modules' + os.sep + 'virtualization' + os.sep + 'libs' + os.sep
+if cur_path not in sys.path:
+    sys.path.append(cur_path)
+
+from virtualizationObj import VirtualizationObj
+
+global virtualization_I
+
+
+module = GetParams("module")
+
+try:
+
+    if (module == "searchColor"):
+
+        virtualization_I = VirtualizationObj()
+
+        maxPoint = GetParams("maxPoint")
+        if (maxPoint == None or maxPoint == ""):
+            maxPoint = []
+        else:
+            maxPoint = eval(maxPoint)
+        
+        minPoint = GetParams("minPoint")
+        if (minPoint == None or minPoint == ""):
+            minPoint = []
+        else:
+            minPoint = eval(minPoint)
+        
+        virtualization_I.setParams(maxPoint, minPoint)
+        
+        color = eval(GetParams("color"))
+        result = virtualization_I.analyzeColor(color)
+        
+        whereToStore = GetParams("whereToStore")
+        SetVar(whereToStore, result)
+
+    if (module == "clickOnColor"):
+
+        virtualization_I = VirtualizationObj()
+
+        maxPoint = GetParams("maxPoint")
+        if (maxPoint == None or maxPoint == ""):
+            maxPoint = []
+        else:
+            maxPoint = eval(maxPoint)
+        
+        minPoint = GetParams("minPoint")
+        if (minPoint == None or minPoint == ""):
+            minPoint = []
+        else:
+            minPoint = eval(minPoint)
+        
+        virtualization_I.setParams(maxPoint, minPoint)
+        
+        color = eval(GetParams("color"))
+        result = virtualization_I.analyzeColor(color)
+        
+        if (result != "Color not found"):
+            virtualization_I.makeAClick(result)
+        
+        whereToStore = GetParams("whereToStore")
+        SetVar(whereToStore, result)
+
+    if (module == "searchWord"):
+
+        virtualization_I = VirtualizationObj()
+
+        maxPoint = GetParams("maxPoint")
+        if (maxPoint == None or maxPoint == ""):
+            maxPoint = []
+        else:
+            maxPoint = eval(maxPoint)
+        
+        minPoint = GetParams("minPoint")
+        if (minPoint == None or minPoint == ""):
+            minPoint = []
+        else:
+            minPoint = eval(minPoint)
+
+        virtualization_I.setParams(maxPoint, minPoint)
+
+        word = GetParams("word")
+        result = virtualization_I.analyzeWord(word)
+        
+        whereToStore = GetParams("whereToStore")
+        SetVar(whereToStore, result)
+
+    if (module == "clickOnWord"):
+
+        virtualization_I = VirtualizationObj()
+
+        maxPoint = GetParams("maxPoint")
+        if (maxPoint == None or maxPoint == ""):
+            maxPoint = []
+        else:
+            maxPoint = eval(maxPoint)
+        
+        minPoint = GetParams("minPoint")
+        if (minPoint == None or minPoint == ""):
+            minPoint = []
+        else:
+            minPoint = eval(minPoint)
+
+        virtualization_I.setParams(maxPoint, minPoint)
+
+        word = GetParams("word")
+        result = virtualization_I.analyzeWord(word)
+
+        if (result != "Word not found"):
+            virtualization_I.makeAClick(result)
+        
+        whereToStore = GetParams("whereToStore")
+        SetVar(whereToStore, result)
+    
+
+
+except Exception as e:
+    print("\x1B[" + "31;40mAn error occurred\x1B[" + "0m")
+    PrintException()
+    raise e
