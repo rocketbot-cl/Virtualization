@@ -402,8 +402,8 @@
                             "en": "Word to search:"
                         },
                         "help": {
-                            "es": "",
-                            "en": ""
+                            "es": "palabra",
+                            "en": "word"
                         },
                         "description" : {
                             "es": "Palabra que se desea buscar.",
@@ -422,10 +422,9 @@
                             "es": "Asignar resultado a variable:",
                             "en": "Assign result to variable:"
                         },
-
                         "help": {
-                            "es": "palabra",
-                            "en": "word"
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
