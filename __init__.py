@@ -32,6 +32,13 @@ cur_path = base_path + 'modules' + os.sep + 'virtualization' + os.sep + 'libs' +
 if cur_path not in sys.path:
     sys.path.append(cur_path)
 
+def hex_to_rgb(value):
+    """Return (red, green, blue) for the color given as #rrggbb."""
+    value = value.lstrip('#')
+    lv = len(value)
+    return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+
+
 from virtualizationObj import VirtualizationObj
 
 global virtualization_I
@@ -58,9 +65,12 @@ try:
             minPoint = eval(minPoint)
         
         virtualization_I.setParams(maxPoint, minPoint)
-        
-        color = eval(GetParams("color"))
-        result = virtualization_I.analyzeColor(color)
+
+        colors = GetParams("iframe")
+        firstColor = eval(colors)["firstColor"]
+        firstColor = hex_to_rgb(firstColor)
+        result = virtualization_I.analyzeColor(firstColor)
+
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result)
@@ -83,8 +93,11 @@ try:
         
         virtualization_I.setParams(maxPoint, minPoint)
         
-        color = eval(GetParams("color"))
-        result = virtualization_I.analyzeColor(color)
+        colors = GetParams("iframe")
+        firstColor = eval(colors)["firstColor"]
+        firstColor = hex_to_rgb(firstColor)
+        
+        result = virtualization_I.analyzeColor(firstColor)
         
         if (result != "Color not found"):
             virtualization_I.makeAClick(result)

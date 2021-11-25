@@ -48,8 +48,8 @@
                             "en": "Minimum point to search in."
                         },
                         "help": {
-                            "es": "[100, 100]",
-                            "en": "[100, 100]"
+                            "es": "[100, 100] | Dejar en blanco para no tener mínimo.",
+                            "en": "[100, 100] | Leave empty if you do not need minimum."
                         },
                         "id": "minPoint",
                         "css": "col-md-6"
@@ -69,33 +69,23 @@
                             "en": "Maximum point to search in."
                         },
                         "help": {
-                            "es": "[1500, 1500]",
-                            "en": "[1500, 1500]"
+                            "es": "[1500, 1500] | Dejar en blanco para no tener máximo.",
+                            "en": "[1500, 1500] | Leave empty if you do not need maximum."
                         },
                         "id": "maxPoint",
                         "css": "col-md-6"
                     },
                     {
-                        "type": "input",
-                        "placeholder": {
-                            "es": "[255, 0, 0]",
-                            "en": "[255, 0, 0]"
-                        },
+                        "type": "html",
                         "title": {
-                            "es": "Color:",
-                            "en": "Color:"
+                            "es": "Seleccione el color",
+                            "en": "Pick color"
                         },
-                        "description":{
-                            "es": "Color que se desea buscar.",
-                            "en": "Color you want to search for."
+                        "src": "index.html",
+                        "id": "html",
+                        "css": "col-md-6",
+                        "style": "height:100px;"
                         },
-                        "help": {
-                            "es": "[255, 0, 0]",
-                            "en": "[255, 0, 0]"
-                        },
-                        "id": "color",
-                        "css": "col-md-6"
-                    },
                     {
                         "type": "input",
                         "placeholder": {
@@ -160,8 +150,8 @@
                             "en": "Minimum point to search in."
                         },
                         "help": {
-                            "es": "[100, 100]",
-                            "en": "[100, 100]"
+                            "es": "[100, 100] | Dejar en blanco para no tener mínimo.",
+                            "en": "[100, 100] | Leave empty if you do not need minimum."
                         },
                         "id": "minPoint",
                         "css": "col-md-6"
@@ -181,33 +171,23 @@
                             "en": "Maximum point to search in."
                         },
                         "help": {
-                            "es": "[1500, 1500]",
-                            "en": "[1500, 1500]"
+                            "es": "[1500, 1500] | Dejar en blanco para no tener máximo.",
+                            "en": "[1500, 1500] | Leave empty if you do not need maximum."
                         },
                         "id": "maxPoint",
                         "css": "col-md-6"
                     },
                     {
-                        "type": "input",
-                        "placeholder": {
-                            "es": "[255, 0, 0]",
-                            "en": "[255, 0, 0]"
-                        },
+                        "type": "html",
                         "title": {
-                            "es": "Color:",
-                            "en": "Color:"
+                            "es": "Seleccione el color",
+                            "en": "Pick color"
                         },
-                        "description":{
-                            "es": "Color que se desea buscar.",
-                            "en": "Color you want to search for."
+                        "src": "index.html",
+                        "id": "html",
+                        "css": "col-md-6",
+                        "style": "height:100px;"
                         },
-                        "help": {
-                            "es": "[255, 0, 0]",
-                            "en": "[255, 0, 0]"
-                        },
-                        "id": "color",
-                        "css": "col-md-6"
-                    },
                     {
                         "type": "input",
                         "placeholder": {
@@ -244,13 +224,13 @@
         {
             "en": {
                 "title": "Search a word",
-                "description": "Searchs for a color in the screen",
+                "description": "Searchs for a word in the screen",
                 "title_options": "Select Option",
                 "options":null
             },
             "es": {
                 "title": "Buscar una palabra",
-                "description": "Busca un color en la pantalla",
+                "description": "Busca una palabra en la pantalla",
                 "title_options": "Seleccione una opción",
                 "options": null
             },
@@ -272,8 +252,8 @@
                             "en": "Minimum point to search in."
                         },
                         "help": {
-                            "es": "[100, 100]",
-                            "en": "[100, 100]"
+                            "es": "[100, 100] | Dejar en blanco para no tener mínimo.",
+                            "en": "[100, 100] | Leave empty if you do not need minimum."
                         },
                         "id": "minPoint",
                         "css": "col-md-6"
@@ -293,8 +273,8 @@
                             "en": "Maximum point to search in."
                         },
                         "help": {
-                            "es": "[1500, 1500]",
-                            "en": "[1500, 1500]"
+                            "es": "[1500, 1500] | Dejar en blanco para no tener máximo.",
+                            "en": "[1500, 1500] | Leave empty if you do not need maximum."
                         },
                         "id": "maxPoint",
                         "css": "col-md-6"
@@ -356,13 +336,13 @@
         {
             "en": {
                 "title": "Click on word",
-                "description": "Searchs for a color in the screen",
+                "description": "Searchs for a word in the screen",
                 "title_options": "Select Option",
                 "options":null
             },
             "es": {
                 "title": "Click en palabra",
-                "description": "Busca un color en la pantalla",
+                "description": "Busca una palabra en la pantalla",
                 "title_options": "Seleccione una opción",
                 "options": null
             },
@@ -380,12 +360,12 @@
                             "en": "Minimum point:"
                         },
                         "description":{
-                            "es": "Punto mínimo en el cual buscar.",
+                            "es": "Punto mínimo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
                             "en": "Minimum point to search in."
                         },
                         "help": {
-                            "es": "[100, 100]",
-                            "en": "[100, 100]"
+                            "es": "[100, 100] | Dejar en blanco para no tener mínimo.",
+                            "en": "[100, 100] | Leave empty if you do not need minimum."
                         },
                         "id": "minPoint",
                         "css": "col-md-6"
@@ -401,12 +381,12 @@
                             "en": "Maximum point:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar.",
+                            "es": "Punto maximo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
-                            "es": "[1500, 1500]",
-                            "en": "[1500, 1500]"
+                            "es": "[1500, 1500] | Dejar en blanco para no tener máximo.",
+                            "en": "[1500, 1500] | Leave empty if you do not need maximum."
                         },
                         "id": "maxPoint",
                         "css": "col-md-6"
@@ -422,6 +402,10 @@
                             "en": "Word to search:"
                         },
                         "help": {
+                            "es": "",
+                            "en": ""
+                        },
+                        "description" : {
                             "es": "Palabra que se desea buscar.",
                             "en": "Word you want to search for."
                         },
@@ -438,10 +422,7 @@
                             "es": "Asignar resultado a variable:",
                             "en": "Assign result to variable:"
                         },
-                        "description" : {
-                            "es": "Palabra que se desea buscar.",
-                            "en": "Word you want to search for."
-                        },
+
                         "help": {
                             "es": "palabra",
                             "en": "word"
