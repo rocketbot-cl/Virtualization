@@ -9,6 +9,93 @@ except ImportError:
 import pytesseract
 from pytesseract import Output
 
+def ocr_image(img_):
+    """
+    OCR the image and return the text with coordinates.
+
+    :param img_: Image to OCR
+    :param to_data: Return the text with data
+    :return str | dict: Text or data with coordinates
+
+    """
+    try:
+        # if _platform == "linux" or _platform == "linux2":
+        #     pass
+        # elif _platform == "darwin":
+        #     pytesseract.pytesseract.tesseract_cmd = path_tesseract.mac
+        # elif _platform == "win32":
+        #     pytesseract.pytesseract.tesseract_cmd = path_tesseract.win
+        pytesseract.pytesseract.tesseract_cmd = r'modules/virtualization/libs/tesseract/tesseract.exe'
+
+        ocr = pytesseract.image_to_data(img_, lang="spa", output_type=pytesseract.Output.DICT)
+        
+        return ocr
+    except Exception as e:
+        print("exception ocr_image")
+        print(e)
+    return None
+
+def find_text_in_data(data_img, text):
+    """
+    Return the coordinates of the text in the image data.
+
+    :param data_img: OCR image as data
+    :param text: Text to search
+    :return: Coordinates of the text or None
+    """
+    try:
+        for i in range(len(data_img['level'])):
+            if data_img['text'][i] == text:
+                print(data_img)
+                return {
+                    "x":data_img['left'][i], 
+                    "y": data_img['top'][i],
+                    "width":data_img['width'][i], 
+                    "height": data_img['height'][i]
+                }
+        return None
+    except Exception as e:
+        print("exception find_text_in_data")
+        print(e)
+        return None
+
+def find_text_in_image(img__, text):
+    """
+    Return the coordinates of the text in the image.
+
+    :param img__: Image where to search
+    :param text: Text to search
+    :return: Coordinates of the text or None
+    """
+    try:
+        for j in range(3,1,-1):
+            for i in range(0, j):
+                print(j, "Searching text", text)
+                x = i*img__.width/j
+                img_cropped = __edit_image(img__, scale=3, crop=(x, 0, x+img__.width/j, img__.height))
+                ocr_img = ocr_image(img_cropped)
+                coord = find_text_in_data(ocr_img, text)
+                if coord:
+                    return {
+                        "x":coord["x"]/3 + x,
+                        "y": coord["y"]/3,
+                        "width": coord["width"]/3,
+                        "height": coord["height"]/3
+                    }
+                
+    except Exception as e:
+        print("exception find_text_in_image")
+        print(e)
+ 
+    return None
+
+def __edit_image(img, scale=1, crop=None):
+    img = img.resize((int(img.width*scale), int(img.height*scale)), Image.ANTIALIAS)
+    if crop:
+        img.crop(crop)
+    
+    return img
+
 class VirtualizationObj:
 
     def __init__(self):
@@ -73,7 +160,8 @@ class VirtualizationObj:
     def analyzeWord(self, wordToSearch):
 
         im1 = pyautogui.screenshot('modules/virtualization/libs/image.png')
-        pytesseract.pytesseract.tesseract_cmd = r'modules/virtualization/libs/tesseract/tesseract.exe'
+        # thisIsOrc = ocr_image()
+        # pytesseract.pytesseract.tesseract_cmd = r'modules/virtualization/libs/tesseract/tesseract.exe'
         
         if len(self.minPoint) > 0 and len(self.maxPoint) == 0:
             im2 = cv2.imread('modules/virtualization/libs/image.png')
@@ -88,39 +176,18 @@ class VirtualizationObj:
             im1 = im1.crop(tuple(self.minPoint + self.maxPoint))
         except:
             pass
+
         
         im1.save("modules/virtualization/libs/cropImage.png")
-        a = pytesseract.image_to_data(im1).replace("\t", " ").split("\n")
-        # print(a)
-        
-        b = []
-        for each in a:
-            b.append(each.split(" "))
 
-        c = []
-        # e = encontrado?
-        e = 0
-
-        for cada in b:
-            if e != 1:
-                try:
-                    cada.index(wordToSearch)
-                    if len(self.minPoint) > 0:
-                        c.append(int(float(self.minPoint[0]) + float(cada[6]) + (float(cada[8]) /2 )))
-                        c.append(int(float(self.minPoint[1]) + float(cada[7]) + (float(cada[9]) /2 )))
-                        # print(c) # descomentar para ver lo que lee el ocr
-                    else:
-                        c.append(int( float(cada[6]) + ((float(cada[8]) / 2))))
-                        c.append(int( float(cada[7]) + ((float(cada[9]) / 2))))
-                    e = 1
-                except:
-                    pass
-        
-        if len(c) < 1:
-            c = "Word not found"
-        
-        return c
+        # pytesseract.pytesseract.tesseract_cmd = r'modules/virtualization/libs/tesseract/tesseract.exe'
+        return find_text_in_image(im1, wordToSearch)
 
     def makeAClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        print(coordinates)
         pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
         pyautogui.click()
