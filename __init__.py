@@ -150,10 +150,15 @@ try:
         word = GetParams("word")
         result = virtualization_I.analyzeWord(word)
 
-        result2 = (int(result["x"]) + int(result["width"] / 2),int(result["y"]) + int(result["height"] / 2))
+        try:
 
-        if (result2 != "Word not found"):
+            result2 = (int(result["x"]) + int(result["width"] / 2),int(result["y"]) + int(result["height"] / 2))
+        except:
+            result2 = False
+
+        if (result2 != False):
             virtualization_I.makeAClick(result2)
+            result2 = True
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result2)
