@@ -46,7 +46,6 @@ def find_text_in_data(data_img, text):
     try:
         for i in range(len(data_img['level'])):
             if data_img['text'][i] == text:
-                print(data_img)
                 return {
                     "x":data_img['left'][i], 
                     "y": data_img['top'][i],
@@ -188,6 +187,5 @@ class VirtualizationObj:
             eval(coordinates)
         except:
             pass
-        print(coordinates)
         pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
         pyautogui.click()
