@@ -4,7 +4,8 @@ In order to use this module, you have to pick a color or word to search for; and
 ---
 
 ## Como usar este módulo
-__Descargar__ e __instalar__ el contenido en la carpeta 'modules' dentro de Rocketbot.
+Para usar este módulo, tienes que proporcionar un color o palabra a buscar, y opcionalmente puedes elegir el
+rango en el cual hacerlo (caso contrario, será toda la pantalla).
 
 
 ---

@@ -8,8 +8,9 @@ except ImportError:
     import Image
 import pytesseract
 from pytesseract import Output
+import sys
 
-def ocr_image(img_):
+def ocr_image(img_, path_tesseract):
     """
     OCR the image and return the text with coordinates.
 
@@ -19,16 +20,17 @@ def ocr_image(img_):
 
     """
     try:
-        # if _platform == "linux" or _platform == "linux2":
-        #     pass
-        # elif _platform == "darwin":
-        #     pytesseract.pytesseract.tesseract_cmd = path_tesseract.mac
-        # elif _platform == "win32":
-        #     pytesseract.pytesseract.tesseract_cmd = path_tesseract.win
-        pytesseract.pytesseract.tesseract_cmd = r'modules/virtualization/libs/tesseract/tesseract.exe'
-
-        ocr = pytesseract.image_to_data(img_, lang="spa", output_type=pytesseract.Output.DICT)
+        _platform = sys.platform
         
+        if _platform == "linux" or _platform == "linux2":
+            pass
+        elif _platform == "darwin":
+            pytesseract.pytesseract.tesseract_cmd = path_tesseract.mac
+        elif _platform == "win32":
+            pytesseract.pytesseract.tesseract_cmd = path_tesseract.win
+
+        ocr = pytesseract.image_to_data(img_, lang="spa", output_type=pytesseract.Output.DICT, config=path_tesseract.config + " 3 -c tessedit_create_tsv=1")
+
         return ocr
     except Exception as e:
         print("exception ocr_image")
@@ -58,7 +60,7 @@ def find_text_in_data(data_img, text):
         print(e)
         return None
 
-def find_text_in_image(img__, text):
+def find_text_in_image(img__, text, path_tesseract):
     """
     Return the coordinates of the text in the image.
 
@@ -72,7 +74,7 @@ def find_text_in_image(img__, text):
                 print(j, "Searching text", text)
                 x = i*img__.width/j
                 img_cropped = __edit_image(img__, scale=3, crop=(x, 0, x+img__.width/j, img__.height))
-                ocr_img = ocr_image(img_cropped)
+                ocr_img = ocr_image(img_cropped, path_tesseract)
                 coord = find_text_in_data(ocr_img, text)
                 if coord:
                     return {
@@ -156,11 +158,9 @@ class VirtualizationObj:
 
             return c
 
-    def analyzeWord(self, wordToSearch):
+    def analyzeWord(self, wordToSearch, path_tesseract):
 
         im1 = pyautogui.screenshot('modules/virtualization/libs/image.png')
-        # thisIsOrc = ocr_image()
-        # pytesseract.pytesseract.tesseract_cmd = r'modules/virtualization/libs/tesseract/tesseract.exe'
         
         if len(self.minPoint) > 0 and len(self.maxPoint) == 0:
             im2 = cv2.imread('modules/virtualization/libs/image.png')
@@ -176,11 +176,7 @@ class VirtualizationObj:
         except:
             pass
 
-        
-        im1.save("modules/virtualization/libs/cropImage.png")
-
-        # pytesseract.pytesseract.tesseract_cmd = r'modules/virtualization/libs/tesseract/tesseract.exe'
-        return find_text_in_image(im1, wordToSearch)
+        return find_text_in_image(im1, wordToSearch, path_tesseract)
 
     def makeAClick(self, coordinates):
         try:

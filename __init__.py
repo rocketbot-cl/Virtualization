@@ -26,6 +26,8 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 import os
 import sys
+# import pytesseract
+# from pytesseract import Output
 
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'virtualization' + os.sep + 'libs' + os.sep
@@ -37,6 +39,7 @@ def hex_to_rgb(value):
     value = value.lstrip('#')
     lv = len(value)
     return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+
 
 
 from virtualizationObj import VirtualizationObj
@@ -148,7 +151,7 @@ try:
         virtualization_I.setParams(maxPoint, minPoint)
 
         word = GetParams("word")
-        result = virtualization_I.analyzeWord(word)
+        result = virtualization_I.analyzeWord(word, path_tesseract)
 
         try:
 
