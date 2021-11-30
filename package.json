@@ -7,7 +7,7 @@
     "homepage":"http://rocketbot.co/",
     "linux": false,
     "windows": true,
-    "mac": false,
+    "mac": true,
     "docker": false,
     "name": "virtualization",
     "dependencies": {},
@@ -116,7 +116,7 @@
             "group": "scripts",
             "linux": false,
             "windows": true,
-            "mac": false,
+            "mac": true,
             "docker": false
         },
         {
@@ -218,7 +218,7 @@
             "group": "scripts",
             "linux": false,
             "windows": true,
-            "mac": false,
+            "mac": true,
             "docker": false
         },
         {
@@ -330,7 +330,7 @@
             "group": "scripts",
             "linux": false,
             "windows": true,
-            "mac": false,
+            "mac": true,
             "docker": false
         },
         {
@@ -442,7 +442,7 @@
             "group": "scripts",
             "linux": false,
             "windows": true,
-            "mac": false,
+            "mac": true,
             "docker": false
         }
     ]

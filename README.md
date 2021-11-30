@@ -37,7 +37,8 @@ Searchs for a word in the screen or range and clicks it.
 ----
 ### OS
 
-- windows
+- Windows
+- MacOS
 
 ### Dependencies
 
