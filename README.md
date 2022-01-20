@@ -20,16 +20,16 @@ to restrict the area to search in, insert the range of it.
 
 
 1. Search Color  
-Searchs for a color in the screen or range.
+Searchs for a color in the screen
 
 2. Click on color  
-Searchs for a color in the screen or range and clicks it.
+Searchs for a color in the screen
 
 3. Search a word  
-Searchs for a word in the screen or range.
+Searchs for a word in the screen
 
 4. Click on word  
-Searchs for a word in the screen or range and clicks it.
+Searchs for a word in the screen  
 
 
 
@@ -37,8 +37,8 @@ Searchs for a word in the screen or range and clicks it.
 ----
 ### OS
 
-- Windows
-- MacOS
+- windows
+- mac
 
 ### Dependencies
 

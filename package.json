@@ -2,7 +2,7 @@
     "author":"Caleb Cipra",
     "description": "Search for colors or words and interact with them.",
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"0.1.0",
+    "version":"1.0.0",
     "license": "MIT",
     "homepage":"http://rocketbot.co/",
     "linux": false,
@@ -204,6 +204,38 @@
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Tipo de click:",
+                            "en": "Type of click:"
+                        },
+                        "description": {
+                            "es": "Tipo de click que se desea ejecutar.",
+                            "en": "Type of click that you want to perform."
+                        },
+                        "options": [
+                            {
+                                "title": "--Seleccione--",
+                                "value": ""
+                            },
+                            {
+                                "title": "click",
+                                "value": "singleClick"
+                            },
+                            {
+                                "title": "doubleClick",
+                                "value": "doubleClick"
+                            }
+                        ],
+                        "help": {
+                            "es": "Help example",
+                            "en": "Help example",
+                            "cn": "Help example"
+                        },
+                        "id": "clickOption",
                         "css": "col-md-6"
                     }
                 ]
@@ -428,6 +460,38 @@
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Tipo de click:",
+                            "en": "Type of click:"
+                        },
+                        "description": {
+                            "es": "Tipo de click que se desea ejecutar.",
+                            "en": "Type of click that you want to perform."
+                        },
+                        "options": [
+                            {
+                                "title": "--Seleccione--",
+                                "value": ""
+                            },
+                            {
+                                "title": "click",
+                                "value": "singleClick"
+                            },
+                            {
+                                "title": "doubleClick",
+                                "value": "doubleClick"
+                            }
+                        ],
+                        "help": {
+                            "es": "Help example",
+                            "en": "Help example",
+                            "cn": "Help example"
+                        },
+                        "id": "clickOption",
                         "css": "col-md-6"
                     }
                 ]

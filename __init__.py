@@ -103,7 +103,12 @@ try:
         result = virtualization_I.analyzeColor(firstColor)
         
         if (result != "Color not found"):
-            virtualization_I.makeAClick(result)
+            clickOption = GetParams("clickOption")
+            if clickOption == "singleClick":
+                virtualization_I.makeAClick(result)
+            
+            if clickOption == "doubleClick":
+                virtualization_I.makeADoubleClick(result)
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result)
@@ -160,8 +165,14 @@ try:
             result2 = False
 
         if (result2 != False):
-            virtualization_I.makeAClick(result2)
-            result2 = True
+            clickOption = GetParams("clickOption")
+            if clickOption == "singleClick":
+                virtualization_I.makeAClick(result2)
+                result2 = True
+            
+            if clickOption == "doubleClick":
+                virtualization_I.makeADoubleClick(result2)
+                result2 = True
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result2)

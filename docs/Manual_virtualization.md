@@ -4,9 +4,9 @@
 
 # Virtualization
   
-Search for colors or words and interact with them.  
+Busca colores o palabras e interactúa con ellos.  
   
-![banner](/docs/imgs/Banner_virtualization.png)
+![banner](imgs/Banner_Virtualization.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
@@ -15,7 +15,9 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de ro
 
 
 ## Como usar este módulo
-__Descargar__ e __instalar__ el contenido en la carpeta 'modules' dentro de Rocketbot.
+Para usar este módulo, tienes que proporcionar un color o palabra a buscar, y opcionalmente 
+puedes elegir el
+rango en el cual hacerlo (caso contrario, será toda la pantalla).
 
 
 
@@ -40,6 +42,7 @@ Busca un color en la pantalla
 |Punto máximo|Punto maximo en el cual buscar.|[1500, 1500]|
 |Seleccione el color|||
 |Asignar resultado a variable||Variable|
+|Tipo de click|Tipo de click que se desea ejecutar.||
 
 ### Buscar una palabra
   
@@ -60,3 +63,4 @@ Busca una palabra en la pantalla
 |Punto máximo|Punto maximo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.|[1500, 1500]|
 |Palabra a buscar|Palabra que se desea buscar.|palabra|
 |Asignar resultado a variable||Variable|
+|Tipo de click|Tipo de click que se desea ejecutar.||
