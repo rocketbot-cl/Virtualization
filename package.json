@@ -228,13 +228,24 @@
                             {
                                 "title": "doubleClick",
                                 "value": "doubleClick"
+                            },
+                            {
+                                "title": "singleRightClick",
+                                "value": "singleRightClick"
+                            },
+                            {
+                                "title": "doubleRightClick",
+                                "value": "doubleRightClick"
+                            },
+                            {
+                                "title": "singleMiddleClick",
+                                "value": "singleMiddleClick"
+                            },
+                            {
+                                "title": "doubleMiddleClick",
+                                "value": "doubleMiddleClick"
                             }
                         ],
-                        "help": {
-                            "es": "Help example",
-                            "en": "Help example",
-                            "cn": "Help example"
-                        },
                         "id": "clickOption",
                         "css": "col-md-6"
                     }
@@ -484,6 +495,22 @@
                             {
                                 "title": "doubleClick",
                                 "value": "doubleClick"
+                            },
+                            {
+                                "title": "singleRightClick",
+                                "value": "singleRightClick"
+                            },
+                            {
+                                "title": "doubleRightClick",
+                                "value": "doubleRightClick"
+                            },
+                            {
+                                "title": "singleMiddleClick",
+                                "value": "singleMiddleClick"
+                            },
+                            {
+                                "title": "doubleMiddleClick",
+                                "value": "doubleMiddleClick"
                             }
                         ],
                         "help": {

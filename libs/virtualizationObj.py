@@ -223,3 +223,35 @@ class VirtualizationObj:
             pass
         pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
         pyautogui.doubleClick()
+
+    def makeAsingleRightClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.click(button='right')
+
+    def makeAdoubleRightClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.click(button='right', clicks=2)
+
+    def makeAsingleMiddleClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.click(button='middle')
+
+    def makeAdoubleMiddleClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.click(button='middle', clicks=2)

@@ -109,6 +109,18 @@ try:
             
             if clickOption == "doubleClick":
                 virtualization_I.makeADoubleClick(result)
+                
+            if clickOption == "singleRightClick":
+                virtualization_I.makeAsingleRightClick(result)
+            
+            if clickOption == "doubleRightClick":
+                virtualization_I.makeAdoubleRightClick(result)
+
+            if clickOption == "singleMiddleClick":
+                virtualization_I.makeAsingleMiddleClick(result)
+            
+            if clickOption == "doubleMiddleClick":
+                virtualization_I.makeAdoubleMiddleClick(result)
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result)
