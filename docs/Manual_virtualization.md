@@ -4,7 +4,7 @@
 
 # Virtualization
   
-Busca colores o palabras e interactúa con ellos.  
+Search for colors or words and interact with them.  
   
 ![banner](imgs/Banner_Virtualization.png)
 ## Como instalar este módulo
@@ -64,3 +64,11 @@ Busca una palabra en la pantalla
 |Palabra a buscar|Palabra que se desea buscar.|palabra|
 |Asignar resultado a variable||Variable|
 |Tipo de click|Tipo de click que se desea ejecutar.||
+
+### Obtener coordenadas
+  
+Obtiene la coordenada donde esta el mouse
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Segundos a esperar|Segundos a esperar para que tome la coordenada del mouse.|4|
+|Asignar resultado a variable||Variable|
