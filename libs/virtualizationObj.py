@@ -102,7 +102,7 @@ class VirtualizationObj:
     def __init__(self):
         pass
     
-    def setParams(self, maxPoint=[], minPoint=[]):
+    def setParams(self, maxPoint=[], minPoint=[0,0]):
         self.maxPoint = maxPoint
         self.minPoint = minPoint
 
@@ -115,69 +115,42 @@ class VirtualizationObj:
             self.maxPoint.append(im2.shape[:2][1])
             self.maxPoint.append(im2.shape[:2][0])
         
-        if len(self.minPoint) == 0 and len(self.maxPoint) > 0:
-            self.minPoint.append(0)
-            self.minPoint.append(0)
+        # if len(self.minPoint) == 0 and len(self.maxPoint) > 0:
+        #     self.minPoint.append(0)
+        #     self.minPoint.append(0)
         
         try:
-            print("try")
-            print(self.minPoint + self.maxPoint)
+            # print("try")
+            # print(self.minPoint + self.maxPoint)
             im1 = im1.crop(tuple(self.minPoint + self.maxPoint))
             im1 = im1.save("modules/virtualization/libs/image3.png")
-            print("after")
+            # print("after")
             
-            print("afterwrite")
+            # print("afterwrite")
         except:
             pass
             
 
-        print(im1)
+        # print(im1)
 
         # cv2.imwrite("modules/virtualization/libs/image3.png", im1)
 
-        print("precolor")
+        # print("precolor")
         
         im1 = cv2.imread('modules/virtualization/libs/image3.png')
+        if len(im1) == 0:
+            im1 = cv2.imread('modules/virtualization/libs/image.png')
+
+        # print("postImage")
 
         #rgb2bgr
         thisarr = []
         thisarr.append(color1[2])
         thisarr.append(color1[1])
         thisarr.append(color1[0])
-
+        # print("pre")
         Y,X = np.where(np.all(im1==thisarr, axis=2))
-        indexesX = []
-        indexesY = []
-
-        # if len(self.maxPoint) > 0 and len(self.minPoint) > 0:
-        #     for i in X:
-        #         # if i > self.minPoint[0] and i < self.maxPoint[0]:
-        #         #     pass
-        #         # else:
-        #         #     indexesX.append(i)
-        #         indexesX.append(i)
-
-        #     for i in Y:
-        #         # if i > self.minPoint[1] and i < self.maxPoint[1]:
-        #         #     pass
-        #         # else:
-        #         #     indexesY.append(i)
-        #         indexesY.append(i)
-
-        # if len(indexesX) > 0 and len(indexesY) > 0:
-        #     # X2 = np.setdiff1d(X, indexesX)
-        #     # Y2 = np.setdiff1d(Y, indexesY)
-        #     # finalTup = list(zip(X2,Y2))
-
-        #     p = np.column_stack((X,Y))
-        #     if len(p[0]) == 0 or len(p[1]) == 0:
-        #         c = "Color not found"
-        #     else:
-        #         c = sum(p[0]) / len(p[0]), sum(p[1]) / len(p[1])
-
-        #     return c
-
-        # else:
+        # print("post")
 
         p = np.column_stack((Y,X))
 
