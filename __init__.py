@@ -41,7 +41,8 @@ def hex_to_rgb(value):
     return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
 
 
-
+import pyautogui
+import time
 from virtualizationObj import VirtualizationObj
 
 global virtualization_I
@@ -63,7 +64,7 @@ try:
         
         minPoint = GetParams("minPoint")
         if (minPoint == None or minPoint == ""):
-            minPoint = []
+            minPoint = [0,0]
         else:
             minPoint = eval(minPoint)
         
@@ -90,7 +91,7 @@ try:
         
         minPoint = GetParams("minPoint")
         if (minPoint == None or minPoint == ""):
-            minPoint = []
+            minPoint = [0,0]
         else:
             minPoint = eval(minPoint)
         
@@ -121,6 +122,7 @@ try:
             
             if clickOption == "doubleMiddleClick":
                 virtualization_I.makeAdoubleMiddleClick(result)
+            result = True
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result)
@@ -137,14 +139,14 @@ try:
         
         minPoint = GetParams("minPoint")
         if (minPoint == None or minPoint == ""):
-            minPoint = []
+            minPoint = [0,0]
         else:
             minPoint = eval(minPoint)
 
         virtualization_I.setParams(maxPoint, minPoint)
 
         word = GetParams("word")
-        result = virtualization_I.analyzeWord(word)
+        result = virtualization_I.analyzeWord(word, path_tesseract)
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result)
@@ -161,7 +163,7 @@ try:
         
         minPoint = GetParams("minPoint")
         if (minPoint == None or minPoint == ""):
-            minPoint = []
+            minPoint = [0,0]
         else:
             minPoint = eval(minPoint)
 
@@ -179,15 +181,42 @@ try:
         if (result2 != False):
             clickOption = GetParams("clickOption")
             if clickOption == "singleClick":
-                virtualization_I.makeAClick(result2)
-                result2 = True
+                virtualization_I.makeAClick(result)
             
             if clickOption == "doubleClick":
-                virtualization_I.makeADoubleClick(result2)
-                result2 = True
+                virtualization_I.makeADoubleClick(result)
+                
+            if clickOption == "singleRightClick":
+                virtualization_I.makeAsingleRightClick(result)
+            
+            if clickOption == "doubleRightClick":
+                virtualization_I.makeAdoubleRightClick(result)
+
+            if clickOption == "singleMiddleClick":
+                virtualization_I.makeAsingleMiddleClick(result)
+            
+            if clickOption == "doubleMiddleClick":
+                virtualization_I.makeAdoubleMiddleClick(result)
+            result2 = True
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result2)
+
+    if (module == "searchForCoordinates"):
+
+        secondsToWait = GetParams("secondsToWait")
+        try:
+            secondsToWait = int(secondsToWait)
+        except:
+            pass
+
+        time.sleep(secondsToWait)
+
+        x, y = pyautogui.position()
+        mousePosition = x, y
+        
+        whereToStore = GetParams("whereToStore")
+        SetVar(whereToStore, mousePosition)
     
 
 
