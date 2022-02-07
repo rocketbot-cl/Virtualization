@@ -102,61 +102,64 @@ class VirtualizationObj:
     def __init__(self):
         pass
     
-    def setParams(self, maxPoint=[], minPoint=[]):
+    def setParams(self, maxPoint=[], minPoint=[0,0]):
         self.maxPoint = maxPoint
         self.minPoint = minPoint
 
     def analyzeColor(self, color1):
         im1 = pyautogui.screenshot('modules/virtualization/libs/image.png')
         time.sleep(3)
-        im = cv2.imread('modules/virtualization/libs/image.png')
+
+        if len(self.minPoint) > 0 and len(self.maxPoint) == 0:
+            im2 = cv2.imread('modules/virtualization/libs/image.png')
+            self.maxPoint.append(im2.shape[:2][1])
+            self.maxPoint.append(im2.shape[:2][0])
+        
+        # if len(self.minPoint) == 0 and len(self.maxPoint) > 0:
+        #     self.minPoint.append(0)
+        #     self.minPoint.append(0)
+        
+        try:
+            # print("try")
+            # print(self.minPoint + self.maxPoint)
+            im1 = im1.crop(tuple(self.minPoint + self.maxPoint))
+            im1 = im1.save("modules/virtualization/libs/image3.png")
+            # print("after")
+            
+            # print("afterwrite")
+        except:
+            pass
+            
+
+        # print(im1)
+
+        # cv2.imwrite("modules/virtualization/libs/image3.png", im1)
+
+        # print("precolor")
+        
+        im1 = cv2.imread('modules/virtualization/libs/image3.png')
+        if len(im1) == 0:
+            im1 = cv2.imread('modules/virtualization/libs/image.png')
+
+        # print("postImage")
 
         #rgb2bgr
         thisarr = []
         thisarr.append(color1[2])
         thisarr.append(color1[1])
         thisarr.append(color1[0])
+        # print("pre")
+        Y,X = np.where(np.all(im1==thisarr, axis=2))
+        # print("post")
 
-        Y,X = np.where(np.all(im==thisarr, axis=2))
-        indexesX = []
-        indexesY = []
+        p = np.column_stack((Y,X))
 
-        if len(self.maxPoint) > 0 and len(self.minPoint) > 0:
-            for i in X:
-                if i > self.minPoint[0] and i < self.maxPoint[0]:
-                    pass
-                else:
-                    indexesX.append(i)
-
-            for i in Y:
-                if i > self.minPoint[1] and i < self.maxPoint[1]:
-                    pass
-                else:
-                    indexesY.append(i)
-
-        if len(indexesX) > 0 and len(indexesY) > 0:
-            X2 = np.setdiff1d(X, indexesX)
-            Y2 = np.setdiff1d(Y, indexesY)
-            finalTup = list(zip(X2,Y2))
-
-            p = np.column_stack(finalTup)
-            if len(p[0]) == 0 or len(p[1]) == 0:
-                c = "Color not found"
-            else:
-                c = sum(p[0]) / len(p[0]), sum(p[1]) / len(p[1])
-
-            return c
-
+        if len(p) == 0:
+            c = "Color not found"
         else:
+            c = int((sum(X) / len(p)) + self.minPoint[1]), int((sum(Y) / len(p)) + self.minPoint[0])
 
-            p = np.column_stack((X,Y))
-
-            if len(p) == 0:
-                c = "Color not found"
-            else:
-                c = int(sum(X) / len(p)), int(sum(Y) / len(p))
-
-            return c
+        return c
 
     def analyzeWord(self, wordToSearch, path_tesseract):
 
@@ -185,3 +188,43 @@ class VirtualizationObj:
             pass
         pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
         pyautogui.click()
+
+    def makeADoubleClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.doubleClick()
+
+    def makeAsingleRightClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.click(button='right')
+
+    def makeAdoubleRightClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.click(button='right', clicks=2)
+
+    def makeAsingleMiddleClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.click(button='middle')
+
+    def makeAdoubleMiddleClick(self, coordinates):
+        try:
+            eval(coordinates)
+        except:
+            pass
+        pyautogui.moveTo(int(coordinates[0]), int(coordinates[1]))
+        pyautogui.click(button='middle', clicks=2)

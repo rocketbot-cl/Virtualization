@@ -2,7 +2,7 @@
     "author":"Caleb Cipra",
     "description": "Search for colors or words and interact with them.",
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"0.1.0",
+    "version":"1.2.0",
     "license": "MIT",
     "homepage":"http://rocketbot.co/",
     "linux": false,
@@ -40,8 +40,8 @@
                             "en": "[0, 0]"
                         },
                         "title": {
-                            "es": "Punto mínimo:",
-                            "en": "Minimum point:"
+                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
+                            "en": "Minimum range of selection [x,y] in pixels:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
@@ -61,11 +61,11 @@
                             "en": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Punto máximo:",
-                            "en": "Maximum point:"
+                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
+                            "en": "Maximum range of selection [x,y] in pixels:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar.",
+                            "es": "Punto máximo en el cual buscar.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
@@ -142,8 +142,8 @@
                             "en": "[0, 0]"
                         },
                         "title": {
-                            "es": "Punto mínimo:",
-                            "en": "Minimum point:"
+                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
+                            "en": "Minimum range of selection [x,y] in pixels:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
@@ -163,11 +163,11 @@
                             "en": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Punto máximo:",
-                            "en": "Maximum point:"
+                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
+                            "en": "Maximum range of selection [x,y] in pixels:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar.",
+                            "es": "Punto máximo en el cual buscar.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
@@ -204,6 +204,49 @@
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Tipo de click:",
+                            "en": "Type of click:"
+                        },
+                        "description": {
+                            "es": "Tipo de click que se desea ejecutar.",
+                            "en": "Type of click that you want to perform."
+                        },
+                        "options": [
+                            {
+                                "title": "--Seleccione--",
+                                "value": ""
+                            },
+                            {
+                                "title": "click",
+                                "value": "singleClick"
+                            },
+                            {
+                                "title": "doubleClick",
+                                "value": "doubleClick"
+                            },
+                            {
+                                "title": "singleRightClick",
+                                "value": "singleRightClick"
+                            },
+                            {
+                                "title": "doubleRightClick",
+                                "value": "doubleRightClick"
+                            },
+                            {
+                                "title": "singleMiddleClick",
+                                "value": "singleMiddleClick"
+                            },
+                            {
+                                "title": "doubleMiddleClick",
+                                "value": "doubleMiddleClick"
+                            }
+                        ],
+                        "id": "clickOption",
                         "css": "col-md-6"
                     }
                 ]
@@ -244,8 +287,8 @@
                             "en": "[0, 0]"
                         },
                         "title": {
-                            "es": "Punto mínimo:",
-                            "en": "Minimum point:"
+                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
+                            "en": "Minimum range of selection [x,y] in pixels:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
@@ -265,11 +308,11 @@
                             "en": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Punto máximo:",
-                            "en": "Maximum point:"
+                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
+                            "en": "Maximum range of selection [x,y] in pixels:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar.",
+                            "es": "Punto máximo en el cual buscar.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
@@ -356,8 +399,8 @@
                             "en": "[0, 0]"
                         },
                         "title": {
-                            "es": "Punto mínimo:",
-                            "en": "Minimum point:"
+                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
+                            "en": "Minimum range of selection [x,y] in pixels:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
@@ -377,11 +420,11 @@
                             "en": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Punto máximo:",
-                            "en": "Maximum point:"
+                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
+                            "en": "Maximum range of selection [x,y] in pixels:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
+                            "es": "Punto máximo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
@@ -428,6 +471,49 @@
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Tipo de click:",
+                            "en": "Type of click:"
+                        },
+                        "description": {
+                            "es": "Tipo de click que se desea ejecutar.",
+                            "en": "Type of click that you want to perform."
+                        },
+                        "options": [
+                            {
+                                "title": "--Seleccione--",
+                                "value": ""
+                            },
+                            {
+                                "title": "click",
+                                "value": "singleClick"
+                            },
+                            {
+                                "title": "doubleClick",
+                                "value": "doubleClick"
+                            },
+                            {
+                                "title": "singleRightClick",
+                                "value": "singleRightClick"
+                            },
+                            {
+                                "title": "doubleRightClick",
+                                "value": "doubleRightClick"
+                            },
+                            {
+                                "title": "singleMiddleClick",
+                                "value": "singleMiddleClick"
+                            },
+                            {
+                                "title": "doubleMiddleClick",
+                                "value": "doubleMiddleClick"
+                            }
+                        ],
+                        "id": "clickOption",
                         "css": "col-md-6"
                     }
                 ]
