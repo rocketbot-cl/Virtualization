@@ -40,8 +40,8 @@
                             "en": "[0, 0]"
                         },
                         "title": {
-                            "es": "Punto mínimo:",
-                            "en": "Minimum point:"
+                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
+                            "en": "Minimum range of selection [x,y] in pixels:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
@@ -61,11 +61,11 @@
                             "en": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Punto máximo:",
-                            "en": "Maximum point:"
+                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
+                            "en": "Maximum range of selection [x,y] in pixels:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar.",
+                            "es": "Punto máximo en el cual buscar.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
@@ -142,8 +142,8 @@
                             "en": "[0, 0]"
                         },
                         "title": {
-                            "es": "Punto mínimo:",
-                            "en": "Minimum point:"
+                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
+                            "en": "Minimum range of selection [x,y] in pixels:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
@@ -163,11 +163,11 @@
                             "en": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Punto máximo:",
-                            "en": "Maximum point:"
+                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
+                            "en": "Maximum range of selection [x,y] in pixels:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar.",
+                            "es": "Punto máximo en el cual buscar.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
@@ -287,8 +287,8 @@
                             "en": "[0, 0]"
                         },
                         "title": {
-                            "es": "Punto mínimo:",
-                            "en": "Minimum point:"
+                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
+                            "en": "Minimum range of selection [x,y] in pixels:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
@@ -308,11 +308,11 @@
                             "en": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Punto máximo:",
-                            "en": "Maximum point:"
+                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
+                            "en": "Maximum range of selection [x,y] in pixels:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar.",
+                            "es": "Punto máximo en el cual buscar.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
@@ -399,8 +399,8 @@
                             "en": "[0, 0]"
                         },
                         "title": {
-                            "es": "Punto mínimo:",
-                            "en": "Minimum point:"
+                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
+                            "en": "Minimum range of selection [x,y] in pixels:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
@@ -420,11 +420,11 @@
                             "en": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Punto máximo:",
-                            "en": "Maximum point:"
+                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
+                            "en": "Maximum range of selection [x,y] in pixels:"
                         },
                         "description":{
-                            "es": "Punto maximo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
+                            "es": "Punto máximo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
                             "en": "Maximum point to search in."
                         },
                         "help": {
@@ -513,11 +513,6 @@
                                 "value": "doubleMiddleClick"
                             }
                         ],
-                        "help": {
-                            "es": "Help example",
-                            "en": "Help example",
-                            "cn": "Help example"
-                        },
                         "id": "clickOption",
                         "css": "col-md-6"
                     }
