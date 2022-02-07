@@ -201,22 +201,6 @@ try:
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result2)
-
-    if (module == "searchForCoordinates"):
-
-        secondsToWait = GetParams("secondsToWait")
-        try:
-            secondsToWait = int(secondsToWait)
-        except:
-            pass
-
-        time.sleep(secondsToWait)
-
-        x, y = pyautogui.position()
-        mousePosition = x, y
-        
-        whereToStore = GetParams("whereToStore")
-        SetVar(whereToStore, mousePosition)
     
 
 
