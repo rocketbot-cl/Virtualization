@@ -31,9 +31,6 @@ Searchs for a word in the screen
 4. Click on word  
 Searchs for a word in the screen
 
-5. Obtain coordinates  
-Obtains the coordinate where the mouse is.  
-
 
 
 
