@@ -1,10 +1,15 @@
 {
-    "author":"Caleb Cipra",
-    "description": "Search for colors or words and interact with them.",
+    "author":"Caleb Cipra - Nicolas Garcia",
+    "description": "Search for colors, words or coordinates and interact with them.",
+    "description_lang": {
+        "es": "Busca colores, palabras o coordenadas e interactua con ellos.",
+        "en": "Search for colors, words or coordinates and interact with them.",
+        "pr": "Procure por cores, palavras ou coordenadas e interaja com eles."
+    },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"1.2.0",
+    "version":"1.3.0",
     "license": "MIT",
-    "homepage":"http://rocketbot.co/",
+    "homepage":"http://rocketbot.com/",
     "linux": false,
     "windows": true,
     "mac": true,
@@ -13,7 +18,8 @@
     "dependencies": {},
     "title": {
         "en": "Virtualizacion",
-        "es": "Virtualization"
+        "es": "Virtualization",
+        "pr": "Virtualization"
     },
     "icon": "data:image/png;base64,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",
     "children": [
@@ -30,6 +36,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Buscar Cor",
+                "description": "Busca uma cor na tela",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -37,72 +49,111 @@
                         "type": "input",
                         "placeholder": {
                             "es": "[0, 0]",
-                            "en": "[0, 0]"
+                            "en": "[0, 0]",
+                            "pr": "[0, 0]"
                         },
                         "title": {
-                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
-                            "en": "Minimum range of selection [x,y] in pixels:"
+                            "es": "Punto mínimo:",
+                            "en": "Minimum point:",
+                            "pr": "Ponto mínimo:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
-                            "en": "Minimum point to search in."
+                            "en": "Minimum point to search in.",
+                            "pr": "Ponto mínimo para procurar."
                         },
                         "help": {
                             "es": "[100, 100] | Dejar en blanco para no tener mínimo.",
-                            "en": "[100, 100] | Leave empty if you do not need minimum."
+                            "en": "[100, 100] | Leave empty if you do not need minimum.",
+                            "pr": "[100, 100] | Deixe em branco se não precisar de mínimo."
                         },
                         "id": "minPoint",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "list",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "[1500, 1500]",
-                            "en": "[1500, 1500]"
+                            "en": "[1500, 1500]",
+                            "pr": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
-                            "en": "Maximum range of selection [x,y] in pixels:"
+                            "es": "Punto máximo:",
+                            "en": "Maximum point:",
+                            "pr": "Ponto máximo:"
                         },
                         "description":{
-                            "es": "Punto máximo en el cual buscar.",
-                            "en": "Maximum point to search in."
+                            "es": "Punto maximo en el cual buscar.",
+                            "en": "Maximum point to search in.",
+                            "pr": "Ponto máximo para procurar."
                         },
                         "help": {
                             "es": "[1500, 1500] | Dejar en blanco para no tener máximo.",
-                            "en": "[1500, 1500] | Leave empty if you do not need maximum."
+                            "en": "[1500, 1500] | Leave empty if you do not need maximum.",
+                            "pr": "[1500, 1500] | Deixe em branco se não precisar de máximo."
                         },
                         "id": "maxPoint",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "list",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "html",
                         "title": {
                             "es": "Seleccione el color",
-                            "en": "Pick color"
+                            "en": "Pick color",
+                            "pr": "Selecione a cor"
+                        },
+                        "placeholder": {
+                            "es": "#ffffff",
+                            "en": "#ffffff",
+                            "pr": "#ffffff"
+                        },
+                        "description": {
+                            "es": "Color a buscar en la pantalla",
+                            "en": "Color to search in the screen",
+                            "pr": "Cor para procurar na tela"
                         },
                         "src": "index.html",
                         "id": "html",
                         "css": "col-md-6",
-                        "style": "height:100px;"
-                        },
+                        "style": "height:100px;",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
+                    },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
+                        },
+                        "description": {
+                            "es": "Variable donde se almacenará el resultado de la búsqueda.",
+                            "en": "Variable where the result of the search will be stored.",
+                            "pr": "Variável onde o resultado da busca será armazenado."
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
                     }
                 ]
             },
@@ -132,6 +183,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Clique na cor",
+                "description": "Procura uma cor na tela",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -139,82 +196,120 @@
                         "type": "input",
                         "placeholder": {
                             "es": "[0, 0]",
-                            "en": "[0, 0]"
+                            "en": "[0, 0]",
+                            "pr": "[0, 0]"
                         },
                         "title": {
-                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
-                            "en": "Minimum range of selection [x,y] in pixels:"
+                            "es": "Punto mínimo:",
+                            "en": "Minimum point:",
+                            "pr": "Ponto mínimo:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
-                            "en": "Minimum point to search in."
+                            "en": "Minimum point to search in.",
+                            "pr": "Ponto mínimo para procurar."
                         },
                         "help": {
                             "es": "[100, 100] | Dejar en blanco para no tener mínimo.",
-                            "en": "[100, 100] | Leave empty if you do not need minimum."
+                            "en": "[100, 100] | Leave empty if you do not need minimum.",
+                            "pr": "[100, 100] | Deixe em branco se não precisar de mínimo."
                         },
                         "id": "minPoint",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "list",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "[1500, 1500]",
-                            "en": "[1500, 1500]"
+                            "en": "[1500, 1500]",
+                            "pr": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
-                            "en": "Maximum range of selection [x,y] in pixels:"
+                            "es": "Punto máximo:",
+                            "en": "Maximum point:",
+                            "pr": "Ponto máximo:"
                         },
                         "description":{
-                            "es": "Punto máximo en el cual buscar.",
-                            "en": "Maximum point to search in."
+                            "es": "Punto maximo en el cual buscar.",
+                            "en": "Maximum point to search in.",
+                            "pr": "Ponto máximo para procurar."
                         },
                         "help": {
                             "es": "[1500, 1500] | Dejar en blanco para no tener máximo.",
-                            "en": "[1500, 1500] | Leave empty if you do not need maximum."
+                            "en": "[1500, 1500] | Leave empty if you do not need maximum.",
+                            "pr": "[1500, 1500] | Deixe em branco se não precisar de máximo."
                         },
                         "id": "maxPoint",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "list",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "html",
+                        "placeholder": "#ffffff",
                         "title": {
                             "es": "Seleccione el color",
-                            "en": "Pick color"
+                            "en": "Pick color",
+                            "pr": "Selecione a cor"
+                        },
+                        "description": {
+                            "es": "Seleccione el color que desea clickear.",
+                            "en": "Pick the color that you want to click.",
+                            "pr": "Selecione a cor que deseja clicar."
                         },
                         "src": "index.html",
                         "id": "html",
                         "css": "col-md-6",
-                        "style": "height:100px;"
-                        },
+                        "style": "height:100px;",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
+                    },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
+                        },
+                        "description": {
+                            "es": "Nombre de la variable donde se almacenará el resultado.",
+                            "en": "Name of the variable where the result will be stored.",
+                            "pr": "Nome da variável onde o resultado será armazenado."
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "select",
+                        "placeholder": "singleClick",
                         "title": {
                             "es": "Tipo de click:",
-                            "en": "Type of click:"
+                            "en": "Type of click:",
+                            "pr": "Tipo de clique:"
                         },
                         "description": {
                             "es": "Tipo de click que se desea ejecutar.",
-                            "en": "Type of click that you want to perform."
+                            "en": "Type of click that you want to perform.",
+                            "pr": "Tipo de clique que deseja executar."
                         },
                         "options": [
                             {
@@ -247,7 +342,10 @@
                             }
                         ],
                         "id": "clickOption",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
                     }
                 ]
             },
@@ -277,6 +375,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Buscar uma palavra",
+                "description": "Busca uma palavra na tela",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -284,82 +388,114 @@
                         "type": "input",
                         "placeholder": {
                             "es": "[0, 0]",
-                            "en": "[0, 0]"
+                            "en": "[0, 0]",
+                            "pr": "[0, 0]"
                         },
                         "title": {
-                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
-                            "en": "Minimum range of selection [x,y] in pixels:"
+                            "es": "Punto mínimo:",
+                            "en": "Minimum point:",
+                            "pr": "Ponto mínimo:"
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar.",
-                            "en": "Minimum point to search in."
+                            "en": "Minimum point to search in.",
+                            "pr": "Ponto mínimo para procurar."
                         },
                         "help": {
                             "es": "[100, 100] | Dejar en blanco para no tener mínimo.",
-                            "en": "[100, 100] | Leave empty if you do not need minimum."
+                            "en": "[100, 100] | Leave empty if you do not need minimum.",
+                            "pr": "[100, 100] | Deixe em branco se não precisar de mínimo."
                         },
                         "id": "minPoint",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "list",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "[1500, 1500]",
-                            "en": "[1500, 1500]"
+                            "en": "[1500, 1500]",
+                            "pr": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
-                            "en": "Maximum range of selection [x,y] in pixels:"
+                            "es": "Punto máximo:",
+                            "en": "Maximum point:",
+                            "pr": "Ponto máximo:"
                         },
                         "description":{
-                            "es": "Punto máximo en el cual buscar.",
-                            "en": "Maximum point to search in."
+                            "es": "Punto maximo en el cual buscar.",
+                            "en": "Maximum point to search in.",
+                            "pr": "Ponto máximo para procurar."
                         },
                         "help": {
                             "es": "[1500, 1500] | Dejar en blanco para no tener máximo.",
-                            "en": "[1500, 1500] | Leave empty if you do not need maximum."
+                            "en": "[1500, 1500] | Leave empty if you do not need maximum.",
+                            "pr": "[1500, 1500] | Deixe em branco se não precisar de máximo."
                         },
                         "id": "maxPoint",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "list",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "palabra",
-                            "en": "word"
+                            "en": "word",
+                            "pr": "palavra"
                         },
                         "title": {
                             "es": "Palabra a buscar:",
-                            "en": "Word to search:"
+                            "en": "Word to search:",
+                            "pr": "Palavra para procurar:"
                         },
                         "description" : {
                             "es": "Palabra que se desea buscar.",
-                            "en": "Word you want to search for."
+                            "en": "Word you want to search for.",
+                            "pr": "Palavra que você deseja procurar."
                         },
                         "help": {
                             "es": "palabra",
-                            "en": "word"
+                            "en": "word",
+                            "pr": "palavra"
                         },
                         "id": "word",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
+                        },
+                        "description": {
+                            "es": "Nombre de la variable en la cual se guardará el resultado.",
+                            "en": "Name of the variable in which the result will be saved.",
+                            "pr": "Nome da variável na qual o resultado será salvo."
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
                     }
                 ]
             },
@@ -389,6 +525,12 @@
                 "title_options": "Seleccione una opción",
                 "options": null
             },
+            "pr": {
+                "title": "Click on word",
+                "description": "Searchs for a word in the screen",
+                "title_options": "Select Option",
+                "options": null
+            },
             "form": {
                 "css": "modal-lg",
                 "inputs": [
@@ -396,92 +538,128 @@
                         "type": "input",
                         "placeholder": {
                             "es": "[0, 0]",
-                            "en": "[0, 0]"
+                            "en": "[0, 0]",
+                            "pr": "[0, 0]"
                         },
                         "title": {
-                            "es": "Rango de seccion de pantalla mínimo [x,y] en pixeles:",
-                            "en": "Minimum range of selection [x,y] in pixels:"
+                            "es": "Punto mínimo:",
+                            "en": "Minimum point:",
+                            "pr": "Ponto mínimo:"
+
                         },
                         "description":{
                             "es": "Punto mínimo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
-                            "en": "Minimum point to search in."
+                            "en": "Minimum point to search in. | Leave empty if you do not need minimum.",
+                            "pr": "Ponto mínimo para pesquisar. | Deixe em branco para pegar toda a tela."
                         },
                         "help": {
                             "es": "[100, 100] | Dejar en blanco para no tener mínimo.",
-                            "en": "[100, 100] | Leave empty if you do not need minimum."
+                            "en": "[100, 100] | Leave empty if you do not need minimum.",
+                            "pr": "[100, 100] | Deixe em branco se não precisar de mínimo."
                         },
                         "id": "minPoint",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "list",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "[1500, 1500]",
-                            "en": "[1500, 1500]"
+                            "en": "[1500, 1500]",
+                            "pr": "[1500, 1500]"
                         },
                         "title": {
-                            "es": "Rango de seccion de pantalla máximo [x,y] en pixeles:",
-                            "en": "Maximum range of selection [x,y] in pixels:"
+                            "es": "Punto máximo:",
+                            "en": "Maximum point:",
+                            "pr": "Ponto máximo:"
                         },
                         "description":{
-                            "es": "Punto máximo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
-                            "en": "Maximum point to search in."
+                            "es": "Punto maximo en el cual buscar. | Dejar en blanco para tomar toda la pantalla.",
+                            "en": "Maximum point to search in. | Leave empty if you do not need maximum.",
+                            "pr": "Ponto máximo para pesquisar. | Deixe em branco para pegar toda a tela."
                         },
                         "help": {
                             "es": "[1500, 1500] | Dejar en blanco para no tener máximo.",
-                            "en": "[1500, 1500] | Leave empty if you do not need maximum."
+                            "en": "[1500, 1500] | Leave empty if you do not need maximum.",
+                            "pr": "[1500, 1500] | Deixe em branco se não precisar de máximo."
                         },
                         "id": "maxPoint",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "list",
+                        "default": null,
+                        "required": false
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "palabra",
-                            "en": "word"
+                            "en": "word",
+                            "pr": "palavra"
                         },
                         "title": {
                             "es": "Palabra a buscar:",
-                            "en": "Word to search:"
+                            "en": "Word to search:",
+                            "pr": "Palavra a pesquisar:"
                         },
                         "help": {
                             "es": "palabra",
-                            "en": "word"
+                            "en": "word",
+                            "pr": "palavra"
                         },
                         "description" : {
                             "es": "Palabra que se desea buscar.",
-                            "en": "Word you want to search for."
+                            "en": "Word you want to search for.",
+                            "pr": "Palavra que você deseja pesquisar."
                         },
                         "id": "word",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
                             "es": "Asignar resultado a variable:",
-                            "en": "Assign result to variable:"
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
+                        },
+                        "description": {
+                            "es": "Nombre de la variable en la cual se guardará el resultado.",
+                            "en": "Name of the variable in which the result will be saved.",
+                            "pr": "Nome da variável na qual o resultado será salvo."
                         },
                         "help": {
                             "es": "Nombre de variable sin {}",
-                            "en": "Variable name without {}"
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável sem {}"
                         },
                         "remove_vars" : true,
                         "id": "whereToStore",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
                     },
                     {
                         "type": "select",
+                        "placeholder": "singleClick",
                         "title": {
                             "es": "Tipo de click:",
-                            "en": "Type of click:"
+                            "en": "Type of click:",
+                            "pr": "Tipo de clique:"
                         },
                         "description": {
                             "es": "Tipo de click que se desea ejecutar.",
-                            "en": "Type of click that you want to perform."
+                            "en": "Type of click that you want to perform.",
+                            "pr": "Tipo de clique que você deseja executar."
                         },
                         "options": [
                             {
@@ -514,13 +692,122 @@
                             }
                         ],
                         "id": "clickOption",
-                        "css": "col-md-6"
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
                     }
                 ]
             },
             "video_youtube": "",
             "icon": "data:image/png;base64,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",
             "module": "clickOnWord",
+            "module_name": "virtualization",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": true,
+            "docker": false
+        },
+        {
+            "en": {
+                "title": "Click on hold",
+                "description": "This command allows you to click on hold on a specific position of the screen for a specific time.",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Click sostenido",
+                "description": "Este comando permite hacer click sostenido en una posición específica de la pantalla por un tiempo específico.",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "pr": {
+                "title": "Clicar sem soltar",
+                "description": "Este comando permite clicar sem soltar em uma posição específica da tela por um tempo específico.",
+                "title_options": "Selecione uma opção",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "300",
+                            "en": "300",
+                            "pr": "300"
+                        },
+                        "title": {
+                            "es": "Posición X:",
+                            "en": "Position X:",
+                            "pr": "Posição X:"
+                        },
+                        "description":{
+                            "es": "Posición X en la que hacer click.",
+                            "en": "Position X to click.",
+                            "pr": "Posição X para clicar."
+                        },
+                        "id": "pos_x",
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "300",
+                            "en": "300",
+                            "pr": "300"
+                        },
+                        "title": {
+                            "es": "Posición Y:",
+                            "en": "Position Y:",
+                            "pr": "Posição Y:"
+                        },
+                        "description":{
+                            "es": "Posición Y en la que hacer click.",
+                            "en": "Position Y to click.",
+                            "pr": "Posição Y para clicar."
+                        },
+                        "id": "pos_y",
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "10",
+                            "en": "10",
+                            "pr": "10"
+                        },
+                        "title": {
+                            "es": "Duración en segundos:",
+                            "en": "Duration in seconds:",
+                            "pr": "Duração em segundos:"
+                        },
+                        "description":{
+                            "es": "Duración en segundos del click sostenido.",
+                            "en": "Duration in seconds of the click hold.",
+                            "pr": "Duração em segundos do clique sem soltar."
+                        },
+                        "id": "duration",
+                        "css": "col-md-6",
+                        "data_type": "int",
+                        "default": null,
+                        "required": true
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "click_hold",
             "module_name": "virtualization",
             "visible": true,
             "options": false,

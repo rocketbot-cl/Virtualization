@@ -201,6 +201,18 @@ try:
         
         whereToStore = GetParams("whereToStore")
         SetVar(whereToStore, result2)
+        
+    if module == "click_hold":
+        pos_x = GetParams("pos_x")
+        pos_y = GetParams("pos_y")
+        duration = GetParams("duration")
+
+        abs_pos_x, abs_pos_y = pyautogui.position()
+        pyautogui.moveTo(int(pos_x), int(pos_y))
+        pyautogui.mouseDown()
+        time.sleep(float(duration))
+        pyautogui.mouseUp()
+        pyautogui.moveTo(abs_pos_x, abs_pos_y)
     
 
 
